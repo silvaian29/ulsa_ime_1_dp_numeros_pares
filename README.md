@@ -1,41 +1,40 @@
 # Práctica 2: Guardar los números pares
 ## 1. Descripción del problema (Fase 1)
 <!-- Explica con tus palabras qué hace tu programa y para qué serviría en la vida real. Máximo 4 líneas. -->
-
+mi programa 
 _____
 
 ## 2. Entradas y salidas (Fase 1)
 <!-- Define cada entrada y cada salida, con su tipo de dato y su objetivo. -->
 
 **Entradas:**
-1. _____
+1. los 5 numeros
 
 **Salidas:**
-1. _____
-2. _____
+1. los numeros pares y cuales son
 
 ## 3. Restricciones e invariante (Fase 1 y 2)
 
 **Restricciones** (¿qué debe cumplirse?):
-- _____
-- _____
+- que sean numeros arabigos
+- que no tengan puntos decimales
 
 **Tamaño del arreglo y por qué** (piensa en el peor caso):
-_____
+5, porque preguntas por 5 numeros 
 
 **¿El 0 y los negativos son pares? ¿Por qué?**
-_____
+si, por que a la hora de dividir no te da un residuo
 
 **Invariante** (¿qué es verdad después de cada vuelta del ciclo?):
-_____
+que son 5 numeros
 
 ## 4. Casos resueltos a mano (Fase 1)
 
 | Caso | Números | Pares guardados | Posición de cada par |
 |---|---|---|---|
-| 1 | 3, 8, 5, 2, 7 | _____ | _____ |
-| 2 | _____ | _____ | _____ |
-| 3 | _____ | _____ | _____ |
+| 1 | 3, 8, 5, 2, 7 | ____8,2_ | ___0,1__ |
+| 2 | ____10,7,3,8,2_ | __10,8,2___ | _0,1,2____ |
+| 3 | __20,50,70,71,83___ | 20,50,70_____ | __0,1,2___ |
 
 ## 5. Receta en pseudocódigo (Fase 2)
 <!-- Tu receta va en el archivo RECETA.md. Aquí solo responde las dos preguntas. -->
@@ -51,16 +50,28 @@ g++ -Wall -Wextra -std=c++17 main.cpp -o numeros_pares
 ```
 
 ## 7. Ejemplo de ejecución (Fase 3)
-<!-- Pega aquí lo que muestra tu programa en pantalla con un caso normal. -->
+<!-- Pega aquí lo que muestra tu programa en pantalla con un caso normal. --PS C:\Users\silva\Downloads\github\ulsa_ime_1_dp_numeros_pares> g++ main.cpp -o main.exe
+>> 
+PS C:\Users\silva\Downloads\github\ulsa_ime_1_dp_numeros_pares> .\main.exe
+>> 
+Guardar los numeros pares de 5 numeros
+Ingresa un numero: 3
+Numero invalido (no es par)
+Ingresa un numero: 4
+Ingresa un numero: 5
+Numero invalido (no es par)
+Ingresa un numero: 6
+Ingresa un numero: 8
 
-```
-_____
-```
+Se guardaron 3 numeros pares:
+4 6 8 
+PS C:\Users\silva\Downloads\github\ulsa_ime_1_dp_numeros_pares> 
+
 
 ## 8. Experimentos (Fase 3)
 
 **Experimento A: ¿qué apareció al imprimir las 5 posiciones del arreglo? ¿Por qué?**
-_____
+los numeros
 
 **Experimento B: ¿qué pasó al usar la variable del ciclo como posición del arreglo? ¿Por qué?**
 _____
@@ -69,21 +80,21 @@ _____
 
 | Caso | Números | Esperado | Obtenido | ¿Pasó? |
 |---|---|---|---|---|
-| Mezcla | 1, 2, 3, 4, 5 | 2 pares: 2, 4 | _____ | _____ |
-| Posiciones distintas | 3, 8, 5, 2, 7 | 2 pares: 8, 2 | _____ | _____ |
-| Todos pares | 2, 4, 6, 8, 10 | 5 pares | _____ | _____ |
-| Todos impares | 1, 3, 5, 7, 9 | 0 pares | _____ | _____ |
-| Con cero y negativos | 0, -3, -4, 7, 1 | 2 pares: 0, -4 | _____ | _____ |
-| Entrada inválida | `hola` o `3.5` | vuelve a pedir | _____ | _____ |
-| Caso propio 1 | _____ | _____ | _____ | _____ |
-| Caso propio 2 | _____ | _____ | _____ | _____ |
+| Mezcla | 1, 2, 3, 4, 5 | 2 pares: 2, 4 | ___2,4__ | ____si_ |
+| Posiciones distintas | 3, 8, 5, 2, 7 | 2 pares: 8, 2 | ___8,2__ | __si___ |
+| Todos pares | 2, 4, 6, 8, 10 | 5 pares | ____2,4,6,8,10_ | _si____ |
+| Todos impares | 1, 3, 5, 7, 9 | 0 pares | __0___ | ___no__ |
+| Con cero y negativos | 0, -3, -4, 7, 1 | 2 pares: 0, -4 | _____0,-4 | ___si__ |
+| Entrada inválida | `hola` o `3.5` | vuelve a pedir | ___no__ | ___no__ |
+| Caso propio 1 | __2,4,7,6,3___ | _3 pares____ | __2,4,6___ | _si____ |
+| Caso propio 2 | ____3,v,4,6,3_ | _vuelve a pedir____ | ___no__ | __no___ |
 
 ## 10. Bitácora de mejoras (Fase 4)
 
 | # | ¿Qué falló o qué quise mejorar? | ¿Qué cambié? | ¿Funcionó? |
 |---|---|---|---|
-| 1 | _____ | _____ | _____ |
-| 2 | _____ | _____ | _____ |
+| 1 | ___no me daba los pares__ | ___hice la modifiacion con %2 =0 __ | _si____ |
+| 2 | _aceptaba letras ____ | ____puse que solo aceptara numeros arabigos_ | ___si__ |
 
 **Reto elegido (opcional):** _____
 
@@ -96,19 +107,19 @@ _____
 ## 12. Reflexión final
 
 **¿Qué aprendí con esta práctica?**
-_____
+como hacer que se seleccionen solo pares
 
 **Ahora que terminé, ¿qué cambiaría de mi proceso?**
-_____
+nada , batalle y fue a pruebay error
 
 **¿Qué fue lo más difícil y cómo lo resolví?**
-_____
+me marcaba errores de sintaxis que pensaba que estaban bien
 
 **¿Qué pregunta me quedó sin responder?**
-_____
+ninguna
 
 **¿Por qué no puedo usar la variable del ciclo para guardar en el arreglo?**
-_____
+por que no es un ciclo , solamente es dar los 5 numeros  y te dan los pares
 
 ## 13. Lista de verificación antes de entregar (Fase 5)
 
